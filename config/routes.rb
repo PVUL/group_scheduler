@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
+
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   root 'homes#index'
-  match '/oauth' => 'authentications#create', via: [:get, :post]
-  devise_for :users
+
 end
