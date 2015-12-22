@@ -1,3 +1,5 @@
 <p>
-  <a href='/oauth/kakao_redirect'>Sign in with KakaoTalk</a>
+  <% unless current_user.nil? %>
+    <a href='/oauth/kakao_redirect'>Connect with KakaoTalk</a>
+  <% end %>
 </p>

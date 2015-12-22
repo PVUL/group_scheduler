@@ -1,0 +1,15 @@
+<h2>User Profile Page</h2>
+<table>
+  <tr>
+    <th>Kakao Nickname:</th>
+    <td><%= @user.nickname %></td>
+  </tr>
+  <tr>
+    <th>Kakao ID:</th>
+    <td><%= @user.uid %></td>
+  </tr>
+  <tr>
+    <th>Kakao Profile Photo:</th>
+    <td><img src = <%= "#{@user.photo_url}" %> </td>
+  </tr>
+</table>

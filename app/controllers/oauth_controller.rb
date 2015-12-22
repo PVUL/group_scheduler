@@ -4,7 +4,11 @@ class OauthController < ApplicationController
     puts access_token_info.inspect
     user_info = get_kakao_user_id(access_token_info['access_token'])
     puts user_info.inspect
-
+    current_user[:uid] = user_info["id"]
+    current_user[:nickname] = user_info["properties"]["nickname"]
+    current_user[:photo_url] = user_info["properties"]["thumbnail_image"]
+    current_user.save
+    redirect_to user_path(current_user)
   end
 
   def kakao_redirect
