@@ -49,6 +49,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -82,6 +83,9 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -99,6 +103,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     metaclass (0.0.4)
+    method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
@@ -121,14 +126,15 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (3.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-kakao (0.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -189,6 +195,7 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (3.0.1)
       activesupport (>= 4.0.0)
+    slop (3.6.0)
     spring (1.6.0)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -227,14 +234,15 @@ DEPENDENCIES
   dotenv-rails
   factory_girl
   foundation-rails
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   mocha
   nifty-generators
   omniauth-facebook
-  omniauth-kakao
   pg
+  pry
   rails (= 4.2.3)
   rspec-rails
   sass-rails (~> 5.0)
