@@ -1,18 +1,10 @@
 class OauthController < ApplicationController
   def kakao
-
     access_token_info = get_kakao_access_token(params[:code])
     puts access_token_info.inspect
+    user_info = get_kakao_user_id(access_token_info['access_token'])
+    puts user_info.inspect
 
-    # get user info with access token
-    url = 'https://kapi.kakao.com/v1/user/me'
-    options = {
-      Authoization: ENV['KAKAO_ADMIN_ID'],
-
-
-
-    }
-    render json: {}
   end
 
   def kakao_redirect
@@ -30,6 +22,13 @@ class OauthController < ApplicationController
     response = HTTParty.post(url,
       :body => options
     )
+    JSON.parse(response.body)
+  end
+
+  def get_kakao_user_id(access_token)
+    headers = { "Authorization" => "Bearer #{access_token}" }
+    url = 'https://kapi.kakao.com/v1/user/me'
+    response = HTTParty.get(url, :headers => headers )
     JSON.parse(response.body)
   end
 end
